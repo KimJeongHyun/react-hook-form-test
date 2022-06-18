@@ -28,6 +28,7 @@ export default function LandingPage2() {
         padding: "5rem",
         display: "flex",
         flexDirection: "column",
+        gap: "1rem",
       }}
     >
       <FormProvider {...methods}>

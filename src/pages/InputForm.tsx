@@ -8,85 +8,66 @@ export default function InputForm() {
 
   return (
     <>
-      <div>
-        <Controller
-          name="userInfo.userName"
-          control={control}
-          render={({ field }) => (
-            <div>
-              유저이름 :{" "}
-              <input
-                value={field.value}
-                onChange={(e) => field.onChange(e.target.value)}
-              />
-            </div>
-          )}
-        />
-        <Controller
-          name="userInfo.password"
-          control={control}
-          render={({ field }) => (
-            <div>
-              패스워드 :{" "}
-              <input
-                type="password"
-                value={field.value}
-                onChange={(e) => field.onChange(e.target.value)}
-              />
-            </div>
-          )}
-        />
-        <Controller
-          name="userInfo.gender"
-          control={control}
-          render={({ field }) => (
-            <div>
-              성별:
-              <label>
-                <input
-                  type="radio"
-                  onChange={(e) => field.onChange("M")}
-                  checked={field.value === "M"}
-                />
-                남자
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  onChange={(e) => field.onChange("F")}
-                  checked={field.value === "F"}
-                />
-                여자
-              </label>
-            </div>
-          )}
-        />
-      </div>
+      <Controller
+        name="userInfo.userName"
+        control={control}
+        render={({ field }) => (
+          <div>
+            유저이름 :{" "}
+            <input
+              value={field.value}
+              onChange={(e) => field.onChange(e.target.value)}
+            />
+          </div>
+        )}
+      />
 
-      <GetInfo2 />
+      <Controller
+        name="userInfo.password"
+        control={control}
+        render={({ field }) => (
+          <div>
+            패스워드 :{" "}
+            <input
+              type="password"
+              value={field.value}
+              onChange={(e) => field.onChange(e.target.value)}
+            />
+          </div>
+        )}
+      />
+
+      <Controller
+        name="userInfo.gender"
+        control={control}
+        render={({ field }) => (
+          <div>
+            성별:
+            <label>
+              <input
+                type="radio"
+                onChange={(e) => field.onChange("M")}
+                checked={field.value === "M"}
+              />
+              남자
+            </label>
+            <label>
+              <input
+                type="radio"
+                onChange={(e) => field.onChange("F")}
+                checked={field.value === "F"}
+              />
+              여자
+            </label>
+          </div>
+        )}
+      />
+      <GetInfo />
     </>
   );
 }
 
-// function GetInfo() {
-//   const { control } = useFormContext<TForm>();
-
-//   return (
-//     <Controller
-//       name="userInfo"
-//       control={control}
-//       render={({ field }) => (
-//         <>
-//           <p>{field.value.userName}</p>
-//           <p>{field.value.password}</p>
-//           <p>{field.value.gender}</p>
-//         </>
-//       )}
-//     />
-//   );
-// }
-
-function GetInfo2() {
+function GetInfo() {
   const { control } = useFormContext<TForm>();
   const userInfo = useWatch({
     control,
