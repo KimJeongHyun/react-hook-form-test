@@ -13,7 +13,6 @@ export const UserInputContainer = styled.div`
     display:flex;
     flex-direction: column;
     gap:1em;
-
     border:1px solid #a0a0a0;
 `
 
@@ -21,8 +20,8 @@ export const InputBlock = styled.div`
 `
 
 export const GenderBlock = styled.div`
- display:flex;
- gap:10px;   
+    display:flex;
+    gap:10px;
 `
 
 export const ConfirmButtonArea = styled.div`
